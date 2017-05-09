@@ -27,7 +27,7 @@ function distributionPobability() {
     }
     echo $randNumber . "\n";
 }
-for($i =0;$i<=10;$i++){
+for($i =0;$i<=3;$i++){
     distributionPobability();
 }
 
@@ -52,3 +52,5 @@ function probality2() {
     
 }
 probality2();
+
+
