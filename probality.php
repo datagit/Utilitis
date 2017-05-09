@@ -1,7 +1,7 @@
 <?php
 //Enter your code here, enjoy!
 
-function distributionPobability() {
+function distributionProbability() {
     $total = 100.0;
     $aValue1 = 0.0;
     $aValue2 = $aValue1 + round(50/100, 3);
@@ -28,10 +28,10 @@ function distributionPobability() {
     echo $randNumber . "\n";
 }
 for($i =0;$i<=3;$i++){
-    distributionPobability();
+    distributionProbability();
 }
 
-function probality2() {
+function probability2() {
     $data = array();
     for($i = 0; $i < 50; $i++) {
         $data[] = 'A';
@@ -51,6 +51,26 @@ function probality2() {
     }
     
 }
-probality2();
+probability2();
 
+function probability3() {
+    $a = array_fill(0, 50, 'A');
+    print_r($a);
+    //0 + 50
+    $b = array_fill(50, 30, 'B');
+    //print_r($b);
+    //50 + 30
+    $c = array_fill(80, 20, 'c');
+    //print_r($c);
+    $abc = array_merge($a,$b, $c);
+    print_r($abc);
+    $keys = array_rand($abc,3);
+    foreach($keys as $k) {
+        echo $abc[$k];
+        echo "\n";
+    }
+    
+}
+
+probability3();
 
