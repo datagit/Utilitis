@@ -30,3 +30,25 @@ function distributionPobability() {
 for($i =0;$i<=10;$i++){
     distributionPobability();
 }
+
+function probality2() {
+    $data = array();
+    for($i = 0; $i < 50; $i++) {
+        $data[] = 'A';
+    }
+    for($i = 0; $i < 30; $i++) {
+        $data[] = 'B';
+    }
+    for($i = 0; $i < 20; $i++) {
+        $data[] = 'C';
+    }
+    echo count($data);
+    echo "\n";
+    $keys = array_rand($data,3);
+    foreach($keys as $k) {
+        echo $data[$k];
+        echo "\n";
+    }
+    
+}
+probality2();
