@@ -31,46 +31,25 @@ for($i =0;$i<=3;$i++){
     distributionProbability();
 }
 
-function probability2() {
+function probability(){
+    $v = 'A=50,B=20,C30';
     $data = array();
     for($i = 0; $i < 50; $i++) {
         $data[] = 'A';
     }
-    for($i = 0; $i < 30; $i++) {
+    for($i = 0; $i < 20; $i++) {
         $data[] = 'B';
     }
-    for($i = 0; $i < 20; $i++) {
+    for($i = 0; $i < 30; $i++) {
         $data[] = 'C';
-    }
-    echo count($data);
-    echo "\n";
-    $keys = array_rand($data,3);
-    foreach($keys as $k) {
-        echo $data[$k];
-        echo "\n";
-    }
-    
-}
-probability2();
-
-function probability3() {
-    $a = array_fill(0, 50, 'A');
-    print_r($a);
-    //0 + 50
-    $b = array_fill(50, 30, 'B');
-    //print_r($b);
-    //50 + 30
-    $c = array_fill(80, 20, 'c');
-    //print_r($c);
-    $abc = array_merge($a,$b, $c);
-    print_r($abc);
-    $keys = array_rand($abc,3);
-    foreach($keys as $k) {
-        echo $abc[$k];
-        echo "\n";
+    }    
+    $keys = array_rand($data, 3);
+    echo $v;
+    echo "\r\n";
+    foreach($keys as $value) {
+        Print_r($data[$value]);
+        echo "\r\n";
     }
     
 }
-
-probability3();
-
+probability();
