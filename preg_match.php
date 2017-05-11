@@ -2,6 +2,7 @@
 $s = 'this is15-Feb-2009';
 $matches = array();
 if (preg_match('/((\d{2})-([a-z]{3})-(\d{4}))/i', $s, $matches)) {
+    //15-Feb-2009
     $input = DateTime::createFromFormat('d-M-Y', $matches[1]);
     if ($input === false) {
         echo sprintf("%s", "Invalid format");
