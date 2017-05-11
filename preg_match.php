@@ -1,17 +1,18 @@
 <?php
-$s = 'this is15-Feb-2009';
-$matches = array();
-if (preg_match('/((\d{2})-([a-z]{3})-(\d{4}))/i', $s, $matches)) {
-    //15-Feb-2009
-    $input = DateTime::createFromFormat('d-M-Y', $matches[1]);
-    if ($input === false) {
-        echo sprintf("%s", "Invalid format");
-    } else {
-        print_r($input->format('Y-m-d'));    
-    }
+function getAge() {
+    $input = 'abc 1983-01-20 xxxxx';
+    if (preg_match('/(\d{4})-(\d{2})-(\d{2})/i', $input, $matches)) {
+        //1983-01-20
+        $date = DateTime::createFromFormat('Y-m-d', $matches[0]);
+        $now = new DateTime();
+        if($now->format("Y") <= $date->format("Y")) {
+            return 0;
+        }
+        return $now->format("Y") - $date->format("Y");
+    }    
+    return 0;
 }
-echo "\n\r";
-print_r($matches);
+echo getAge();
 
 //------------
 echo "\n\r";
