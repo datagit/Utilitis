@@ -31,25 +31,25 @@ for($i =0;$i<=3;$i++){
     distributionProbability();
 }
 
-function probability(){
-    $v = 'A=50,B=20,C30';
-    $data = array();
-    for($i = 0; $i < 50; $i++) {
-        $data[] = 'A';
-    }
-    for($i = 0; $i < 20; $i++) {
-        $data[] = 'B';
-    }
-    for($i = 0; $i < 30; $i++) {
-        $data[] = 'C';
-    }    
-    $keys = array_rand($data, 3);
-    echo $v;
-    echo "\r\n";
-    foreach($keys as $value) {
-        Print_r($data[$value]);
-        echo "\r\n";
-    }
-    
+function getDistributionProbability($countItem = 3, $one = array('percent' => 50, 'value' => 'A')
+		, $tow = array('percent' => 30, 'value' => 'B')
+		, $three = array('percent' => 20, 'value' => 'C')) {	
+	$data = array();
+	foreach(range(1, $one['percent']) as $n) {
+		$data[] = $one['value'];
+	}
+	foreach(range(1, $tow['percent']) as $n) {
+		$data[] = $tow['value'];
+	}
+	foreach(range(1, $three['percent']) as $n) {
+		$data[] = $three['value'];
+	}
+	
+	$keys = array_rand($data, $countItem);
+	$res = array();
+	foreach($keys as $k) {
+		$res[] = $data[$k];
+	}
+	return $res;
 }
-probability();
+print_r(getDistributionProbability());
