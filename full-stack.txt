@@ -1,0 +1,9 @@
+https://thachpham.com/tools/tao-may-ao-tren-may-tinh-voi-vagrant-va-virtualbox.html
+Create Environment:
+	1. Git bash (only windows)
+	2. VirtualBox: https://www.virtualbox.org/
+	3. Vagrant: https://www.vagrantup.com/
+		-sharing: https://vagrantcloud.com/
+		-sync: real_pc_data and vagrant_data
+	
+	
