@@ -1,7 +1,7 @@
 <?php
 $linksArray = array_merge(array(null,null,1,2,5), array(null,null,'a','b','c','d'));
 $a = array_values(array_filter($linksArray, function($value) { return $value !== null; }));
-print_r($a);
+//print_r($a);
 /*
 Array
 (
@@ -27,7 +27,22 @@ $input = array(
     'isRoot' => true,
     'userName' => 'root-user-name',
 );
+function filterRequired($var){
+    if ($var['required'] == true){
+        return $var;
+    }
+}
+$required = array_filter($template, 'filterRequired');
+var_dump($required);
 
+function filterOption($var){
+    if ($var['required'] == false){
+        return $var;
+    }
+}
+$option = array_filter($template, 'filterOption');
+var_dump($option);
+die;
 print_r(array_diff_key($template, $input));
 if ($template['id']['required']) {
 
