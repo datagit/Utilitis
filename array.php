@@ -14,3 +14,26 @@ Array
     [6] => d
 )
 */
+echo "\n";
+$template = array(
+    'id' => array('required' => true, 'type' => FILTER_VALIDATE_INT),
+    'email' => array('required' => true, 'type' => FILTER_VALIDATE_EMAIL),
+    'isRoot' => array('required' => true, 'type' => FILTER_VALIDATE_BOOLEAN),
+    'userName' => array('required' => true, 'type' => FILTER_VALIDATE_REGEXP),
+);
+$input = array(
+    'id' => 100,
+    'email' => 'test@test.com',
+    'isRoot' => true,
+    'userName' => 'root-user-name',
+);
+
+print_r(array_diff_key($template, $input));
+if ($template['id']['required']) {
+
+    if ((empty($input['id'])) || (!filter_var($input['id'], $template['id']['type']))) {
+        echo "id invalid.\n";
+    } else {
+        echo "id is valid.\n";
+    }
+}

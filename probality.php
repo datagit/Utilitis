@@ -5,13 +5,13 @@ function distributionProbability() {
     $total = 100.0;
     $aValue1 = 0.0;
     $aValue2 = $aValue1 + round(50/100, 3);
-    
+
     $bValue1 = $aValue2;
     $bValue2 = $bValue1 + round(30/100, 3);
-    
+
     $cValue1 = $bValue2;
     $cValue2 = $total - $bValue2;
-    
+
     $s = sprintf("A %f, B %f , C %f",$aValue2,$bValue2, $cValue2);
     //echo $s;
     //echo "\n";
@@ -53,3 +53,13 @@ function getDistributionProbability($countItem = 3, $one = array('percent' => 50
 	return $res;
 }
 print_r(getDistributionProbability());
+
+/**
+ * @param $a
+ * @param $b
+ */
+function abc($a, $b){
+
+//b123
+    //a123
+}
