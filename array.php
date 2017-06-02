@@ -15,7 +15,7 @@ Array
 )
 */
 echo "\n";
-$template = array(
+$config = array(
     'id' => array('required' => true, 'type' => FILTER_VALIDATE_INT),
     'email' => array('required' => true, 'type' => FILTER_VALIDATE_EMAIL),
     'isRoot' => array('required' => true, 'type' => FILTER_VALIDATE_BOOLEAN),
@@ -32,7 +32,7 @@ function filterRequired($var){
         return $var;
     }
 }
-$required = array_filter($template, 'filterRequired');
+$required = array_filter($config, 'filterRequired');
 var_dump($required);
 
 function filterOption($var){
@@ -40,13 +40,13 @@ function filterOption($var){
         return $var;
     }
 }
-$option = array_filter($template, 'filterOption');
+$option = array_filter($config, 'filterOption');
 var_dump($option);
 die;
-print_r(array_diff_key($template, $input));
-if ($template['id']['required']) {
+print_r(array_diff_key($config, $input));
+if ($config['id']['required']) {
 
-    if ((empty($input['id'])) || (!filter_var($input['id'], $template['id']['type']))) {
+    if ((empty($input['id'])) || (!filter_var($input['id'], $config['id']['type']))) {
         echo "id invalid.\n";
     } else {
         echo "id is valid.\n";
